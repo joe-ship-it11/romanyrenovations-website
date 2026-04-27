@@ -1166,13 +1166,19 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
-  </style>
+  
+    /* mobile: hide the wordmark, keep monogram only */
+    @media (max-width: 768px) {
+      .nav-wordmark { display: none !important; }
+      .nav-logo img { height: 38px !important; }
+    }
+</style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo" aria-label="Romany Renovations" style="display: flex; align-items: center; gap: 14px; text-decoration: none; flex-wrap: nowrap; white-space: nowrap;"><img src="logo_mark.png" alt="" style="height: 42px; width: auto; display: block; flex-shrink: 0;"><span style="font-family: 'Cinzel', serif; font-weight: 600; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--gold); line-height: 1; white-space: nowrap;">ROMANY <span style="color: var(--text);">RENOVATIONS</span></span></a>
+    <a href="#" class="nav-logo" aria-label="Romany Renovations" style="display: flex; align-items: center; gap: 14px; text-decoration: none; flex-wrap: nowrap; white-space: nowrap;"><img src="logo_mark.png" alt="" style="height: 42px; width: auto; display: block; flex-shrink: 0;"><span class="nav-wordmark" style="font-family: 'Cinzel', serif; font-weight: 600; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--gold); line-height: 1; white-space: nowrap;">ROMANY <span style="color: var(--text);">RENOVATIONS</span></span></a>
     <ul class="nav-links">
       <li><a href="#founder">Founder</a></li>
       <li><a href="#services">Services</a></li>
