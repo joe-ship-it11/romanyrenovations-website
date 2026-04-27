@@ -304,6 +304,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 18%;
       display: block;
       border-radius: 8px;
     }
@@ -1170,6 +1171,10 @@
     /* mobile: hide the wordmark, keep monogram only */
     @media (max-width: 768px) {
       .nav-wordmark { display: none !important; }
+      /* mobile founder — slightly taller crop, keep face up */
+      .founder-photo { aspect-ratio: 5 / 6; max-height: 80vh; }
+      .founder-photo img { object-position: center 15%; }
+
       .nav-logo img { height: 38px !important; }
     }
 </style>
