@@ -1,0 +1,6 @@
+# ignore old backups + unrelated assets
+index_v1_kitchen_only.html
+tnc_music_extension.zip
+*.zip
+.DS_Store
+Thumbs.db

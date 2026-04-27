@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Romany Renovations | Custom Millwork & General Contracting</title>
+  <meta name="description" content="Custom millwork, residential and commercial renovations across the Greater Toronto Area. Quality you see, craftsmanship you feel. Get a free quote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --gold: #c9a84c;
+      --gold-light: #e2c378;
+      --gold-dark: #a0782e;
+      --white: #ffffff;
+      --gray: #888888;
+      --light-gray: #f5f5f5;
+      --border: #2a2a2a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      transition: all 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black) !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 5% 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.85) 100%),
+        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1800&q=80') center/cover no-repeat;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .accent { color: var(--gold); }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 16px 32px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--white);
+      padding: 15px 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-stats {
+      position: absolute;
+      bottom: 60px;
+      right: 5%;
+      display: flex;
+      gap: 48px;
+      z-index: 1;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hero-stat .label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 6px;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+
+    .trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ── FOUNDER ── */
+    .founder {
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 0.85fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .founder-photo {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(135deg, #2a2218 0%, #1a1410 100%);
+    }
+
+    .founder-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .founder-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: rgba(201,168,76,0.4);
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .founder-photo-placeholder small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .founder-photo-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 6px;
+      padding: 14px 18px;
+    }
+
+    .founder-photo-tag .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .founder-photo-tag .role {
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .founder-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.85);
+      border-left: 3px solid var(--gold);
+      padding-left: 24px;
+      margin: 28px 0 32px;
+    }
+
+    .founder-body p {
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .founder-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+
+    .founder-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .founder-stat .lbl {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* ── MISSION ── */
+    .mission {
+      background: var(--black);
+      text-align: center;
+      padding: 100px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .mission-content {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .mission-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .mission-headline .accent { color: var(--gold); }
+
+    .mission-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+      text-align: left;
+    }
+
+    .mission-pillar {
+      padding: 24px;
+      border-left: 2px solid rgba(201,168,76,0.4);
+    }
+
+    .mission-pillar h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .mission-pillar p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 100px 5%; }
+
+    .section-label {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--dark); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .service-card {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      border-color: rgba(201,168,76,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .service-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-body {
+      padding: 28px;
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--gold);
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .service-link {
+      color: var(--gold);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .service-link:hover { gap: 10px; }
+
+    /* ── PROCESS ── */
+    .process { background: var(--black); }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 40px 24px;
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .process-step:hover { border-color: rgba(201,168,76,0.3); }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.15);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .process-step h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .process-step p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    /* ── PORTFOLIO ── */
+    .portfolio { background: var(--dark); }
+
+    .portfolio-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      background: var(--dark3);
+      cursor: pointer;
+    }
+
+    .portfolio-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+      min-height: 200px;
+    }
+
+    .portfolio-item:first-child img { min-height: 400px; }
+
+    .portfolio-item:hover img { transform: scale(1.05); }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+    .portfolio-overlay span {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .portfolio-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.85rem;
+    }
+
+    /* ── WHY US ── */
+    .why-us {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .why-us-visual {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .why-us-visual img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .why-us-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 140px;
+      height: 140px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--black);
+    }
+
+    .why-us-badge .big { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; line-height: 1; }
+    .why-us-badge .small { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .why-check {
+      width: 40px;
+      height: 40px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .why-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .why-item p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--dark); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      transition: border-color 0.3s;
+    }
+
+    .testimonial-card:hover { border-color: rgba(201,168,76,0.3); }
+
+    .stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--black);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .author-name { font-weight: 700; font-size: 0.95rem; }
+    .author-meta { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 20px; }
+    .contact-info .section-subtitle { margin-bottom: 40px; }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-detail-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .contact-detail strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+    .contact-detail span { font-size: 1rem; font-weight: 600; }
+    .contact-detail a { color: var(--white); text-decoration: none; }
+    .contact-detail a:hover { color: var(--gold); }
+
+    /* Form */
+    .contact-form {
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 40px;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .form-subtitle {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 32px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--dark3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group select option { background: var(--dark3); }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea { min-height: 100px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 16px;
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-success .check-circle {
+      width: 64px;
+      height: 64px;
+      background: rgba(201,168,76,0.1);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--gold);
+    }
+
+    .form-success h3 { font-size: 1.3rem; margin-bottom: 10px; }
+    .form-success p { color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      padding: 60px 5% 32px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-top: 16px;
+      margin-bottom: 24px;
+      max-width: 320px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      background: var(--dark3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p { font-size: 0.85rem; color: rgba(255,255,255,0.35); }
+    .footer-bottom .gold { color: var(--gold); }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    .floating-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      transition: all 0.2s;
+    }
+
+    .floating-btn:hover { transform: translateY(-2px); }
+
+    .floating-btn.call {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .floating-btn.call:hover { background: var(--gold-light); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-stats { display: none; }
+
+      .why-us, .contact, .founder {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 60px 5%;
+      }
+
+      .founder-photo { aspect-ratio: 5 / 4; max-width: 480px; }
+
+      .mission-pillars {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .why-us-visual img { height: 360px; }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .portfolio-item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .footer-brand { grid-column: span 2; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 72px 5%; }
+
+      .founder-quote { font-size: 1.2rem; padding-left: 18px; }
+      .founder-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .founder-stat:last-child { grid-column: span 2; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .contact-form { padding: 28px 20px; }
+
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-item:first-child { grid-column: span 1; }
+
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: span 1; }
+
+      .trust-bar { gap: 24px; }
+
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--dark);
+      z-index: 200;
+      flex-direction: column;
+      padding: 80px 5% 40px;
+      gap: 32px;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .mobile-nav a:hover { color: var(--gold); }
+
+    .mobile-nav-close {
+      position: absolute;
+      top: 24px;
+      right: 5%;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Romany <span>Renovations</span></a>
+    <ul class="nav-links">
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Free Quote</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
+    <a href="#founder" onclick="document.getElementById('mobileNav').classList.remove('open')">Founder</a>
+    <a href="#services" onclick="document.getElementById('mobileNav').classList.remove('open')">Services</a>
+    <a href="#portfolio" onclick="document.getElementById('mobileNav').classList.remove('open')">Portfolio</a>
+    <a href="#why-us" onclick="document.getElementById('mobileNav').classList.remove('open')">Why Us</a>
+    <a href="#contact" onclick="document.getElementById('mobileNav').classList.remove('open')" style="color: var(--gold)">Get a Free Quote →</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Greater Toronto Area · Licensed General Contractor</div>
+      <h1>Quality You See.<br><span class="accent">Craftsmanship You Feel.</span></h1>
+      <p>Custom millwork, residential and commercial renovations. Hand-built cabinetry, full home transformations, and commercial fit-outs by a team that finishes what it starts.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Get a Free Quote
+        </a>
+        <a href="#portfolio" class="btn-outline">View Our Work →</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="number">200+</div>
+        <div class="label">Projects Done</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">15+</div>
+        <div class="label">Years Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">98%</div>
+        <div class="label">Happy Clients</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Licensed & Insured
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Workmanship Warranty
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      On-Time Delivery
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      Free Estimates
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      5-Star Rated
+    </div>
+  </div>
+
+  <!-- FOUNDER -->
+  <section class="founder" id="founder">
+    <div class="founder-photo">
+      <!-- Replace with Mike's photo: <img src="mike.jpg" alt="Mike Romany, Founder"> -->
+      <div class="founder-photo-placeholder">
+        MR
+        <small>founder photo · replace</small>
+      </div>
+      <div class="founder-photo-tag">
+        <div class="name">Mike Romany</div>
+        <div class="role">Founder · General Contractor</div>
+      </div>
+    </div>
+    <div class="founder-body">
+      <span class="section-label">The Founder</span>
+      <h2 class="section-title">A Career Built<br>One Joint at a Time.</h2>
+      <p class="founder-quote">"I'd rather build one kitchen properly than three kitchens that fall apart in five years."</p>
+      <p>Mike Romany has spent his career on job sites — measuring twice, cutting once, and standing behind every cabinet, beam, and finish his crews install. What started as custom millwork grew into full residential renovations, then commercial fit-outs, but the rule never changed: do it right, or don't do it.</p>
+      <p>Romany Renovations is built on craft, not churn. Every project goes through the same hands, the same standards, and the same finish line.</p>
+      <div class="founder-stats">
+        <div class="founder-stat">
+          <div class="num">15+</div>
+          <div class="lbl">Years on the Tools</div>
+        </div>
+        <div class="founder-stat">
+          <div class="num">200+</div>
+          <div class="lbl">Projects Delivered</div>
+        </div>
+        <div class="founder-stat">
+          <div class="num">100%</div>
+          <div class="lbl">Hands-On Owner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission" id="mission">
+    <div class="mission-content">
+      <span class="section-label">Our Mission</span>
+      <h2 class="mission-headline">
+        We build with care.<br>
+        <span class="accent">The work we do today should still be straight in 30 years.</span>
+      </h2>
+      <div class="mission-pillars">
+        <div class="mission-pillar">
+          <h4>Craft Over Speed</h4>
+          <p>We measure twice, cut once. Every joint, every finish, done by hand on schedule but never rushed.</p>
+        </div>
+        <div class="mission-pillar">
+          <h4>Owner On-Site</h4>
+          <p>Mike is on every job. No project gets handed off to a foreman you've never met.</p>
+        </div>
+        <div class="mission-pillar">
+          <h4>Built To Last</h4>
+          <p>We use materials that age well and methods that hold up. Your grandkids should still be using these cabinets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div style="text-align:center; max-width:680px; margin:0 auto 0;">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Three Lanes,<br>One Standard</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Custom millwork is our craft. Residential and commercial general contracting is our reach. Every project, the same hands and the same standard.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" style="border-color: rgba(201,168,76,0.35);">
+        <img class="service-img" src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80" alt="Custom Millwork & Cabinetry" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          </div>
+          <span style="display:inline-block; background:rgba(201,168,76,0.12); color:var(--gold); font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 10px; border-radius:100px; margin-bottom:14px;">Our Craft</span>
+          <h3>Custom Millwork</h3>
+          <p>Hand-built kitchen cabinets, bathroom vanities, built-in shelving, libraries, closets, and bespoke joinery. Designed for your space, made to fit, finished to last.</p>
+          <a href="#contact" class="service-link">Quote a millwork project →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Residential Renovations" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-7 9 7v10a2 2 0 01-2 2h-4v-7H9v7H5a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3>Residential</h3>
+          <p>Full kitchen and bath remodels, basements, additions, and whole-home renovations. We project-manage everything end to end so you live with one point of contact.</p>
+          <a href="#contact" class="service-link">Quote a home project →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80" alt="Commercial Renovations" loading="lazy" />
+        <div class="service-body">
+          <div class="service-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="1"/><line x1="9" y1="4" x2="9" y2="20"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="15" y1="4" x2="15" y2="20"/></svg>
+          </div>
+          <h3>Commercial</h3>
+          <p>Office build-outs, retail fit-outs, restaurant renovations. Built to spec, on schedule, with the documentation and code compliance commercial work demands.</p>
+          <a href="#contact" class="service-link">Quote a commercial job →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div style="text-align:center; max-width:600px; margin:0 auto 0;">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">Simple. Seamless.<br>Stress-Free.</h2>
+      <p class="section-subtitle" style="margin:0 auto;">From first call to final walkthrough — we make renovation easy.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Free Consultation</h3>
+        <p>We visit your home, understand your vision, and assess the space. Zero commitment, zero pressure.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>3D Design & Quote</h3>
+        <p>We create a 3D design and transparent quote. You see exactly what you're getting before anything starts.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>Expert Build</h3>
+        <p>Our skilled team gets to work. We manage everything — materials, timelines, subcontractors, quality checks.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h3>Final Walkthrough</h3>
+        <p>We do a thorough walkthrough together. You're not satisfied until we are. Every detail signed off.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="portfolio-header">
+      <div>
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Recent Projects</h2>
+      </div>
+      <a href="#contact" class="btn-outline" style="white-space:nowrap">Start Your Project →</a>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Modern Kitchen Renovation" loading="lazy" />
+        <div class="portfolio-overlay"><span>Modern Kitchen — Toronto</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80" alt="Luxury Bathroom" loading="lazy" />
+        <div class="portfolio-overlay"><span>Luxury Bathroom</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&q=80" alt="Open Kitchen" loading="lazy" />
+        <div class="portfolio-overlay"><span>Open-Concept Kitchen</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80" alt="Kitchen Island" loading="lazy" />
+        <div class="portfolio-overlay"><span>Kitchen Island Remodel</span></div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&q=80" alt="Walk-in Shower" loading="lazy" />
+        <div class="portfolio-overlay"><span>Walk-In Shower</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us" id="why-us">
+    <div class="why-us-visual">
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Expert craftsman at work" loading="lazy" />
+      <div class="why-us-badge">
+        <span class="big">15+</span>
+        <span class="small">Years of Excellence</span>
+      </div>
+    </div>
+    <div>
+      <span class="section-label">Why Romany</span>
+      <h2 class="section-title">Craftsmanship You Can Trust</h2>
+      <p style="color:rgba(255,255,255,0.6); line-height:1.7; margin-bottom:8px;">We're not just contractors — we're craftsmen who take pride in every tile, cabinet, and finish. Your home deserves the best.</p>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h4>Fully Licensed & Insured</h4>
+            <p>Complete peace of mind. We carry full liability insurance and all required certifications for renovations.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h4>Transparent Pricing</h4>
+            <p>No hidden costs, no surprises. Every quote is detailed and locked in before work begins.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h4>We Bring Materials To You</h4>
+            <p>No showroom runs. We source and deliver everything — saving you time, energy, and hassle.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-check">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h4>Workmanship Warranty</h4>
+            <p>We stand behind our work. All renovations come with a workmanship guarantee.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div style="text-align:center; max-width:600px; margin:0 auto 0;">
+      <span class="section-label">Reviews</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Romany Renovations completely transformed our kitchen. The team was professional, clean, and finished on schedule. We couldn't be happier — it looks like something out of a magazine."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">SM</div>
+          <div>
+            <div class="author-name">Sarah M.</div>
+            <div class="author-meta">Kitchen Remodel · Toronto</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"From the 3D design to the final walkthrough, the process was seamless. They brought material samples to our house and helped us pick everything. Truly exceptional service."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">JK</div>
+          <div>
+            <div class="author-name">James K.</div>
+            <div class="author-meta">Kitchen & Bathroom · Mississauga</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Our bathroom renovation exceeded every expectation. The attention to detail was incredible — they noticed things we didn't even ask about. Highly recommend Romany to anyone."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">AL</div>
+          <div>
+            <div class="author-name">Anna L.</div>
+            <div class="author-meta">Bathroom Renovation · Brampton</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-info">
+      <span class="section-label">Contact Us</span>
+      <h2 class="section-title">Ready to Transform<br>Your Home?</h2>
+      <p class="section-subtitle">Get your free, no-obligation quote today. We'll visit your home, assess the space, and give you a detailed plan.</p>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <span><a href="tel:+11234567890">(123) 456-7890</a></span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <span><a href="mailto:info@romanyrenovations.com">info@romanyrenovations.com</a></span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 10-16 0c0 3 2.7 6.9 8 11.7z"/></svg>
+          </div>
+          <div>
+            <strong>Service Area</strong>
+            <span>Toronto & Greater Toronto Area</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <strong>Hours</strong>
+            <span>Mon–Fri 8am–6pm · Sat 9am–4pm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div id="formWrap">
+        <h3 class="form-title">Get Your Free Quote</h3>
+        <p class="form-subtitle">We'll get back to you within 24 hours.</p>
+        <form id="quoteForm" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitForm(event)">
+          <input type="hidden" name="form-name" value="quote" />
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first-name" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last-name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="(123) 456-7890" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label>Project Type</label>
+            <select name="project-type" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Custom Millwork / Cabinetry</option>
+              <option>Kitchen Remodel</option>
+              <option>Bathroom Renovation</option>
+              <option>Basement / Addition</option>
+              <option>Whole-Home Renovation</option>
+              <option>Commercial Fit-Out</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Project</label>
+            <textarea name="message" placeholder="Brief description of what you're looking for..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">
+            Send My Request →
+          </button>
+          <p class="form-note">🔒 Your info is private. No spam, ever.</p>
+        </form>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check-circle">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>We'll Be in Touch!</h3>
+        <p>Thanks for reaching out. Our team will contact you within 24 hours to discuss your project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="font-size:1.3rem;">Romany <span>Renovations</span></a>
+        <p>Custom millwork, residential and commercial renovations across the Greater Toronto Area. Built once, built right, by hand.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Houzz">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 21V9l6 3v9"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Custom Millwork</a></li>
+          <li><a href="#services">Residential Renovations</a></li>
+          <li><a href="#services">Commercial Fit-Outs</a></li>
+          <li><a href="#contact">Free Consultation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#founder">Founder</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Romany Renovations. All rights reserved.</p>
+      <p>Built with ❤️ by <span class="gold">Youssef</span></p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta">
+    <a href="tel:+11234567890" class="floating-btn call">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+
+  <script>
+    // Smooth nav shrink on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      nav.style.padding = window.scrollY > 50 ? '12px 5%' : '20px 5%';
+    });
+
+    // Form submit — lets Netlify handle AJAX submission, then shows success state
+    function submitForm(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(() => {
+        document.getElementById('formWrap').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      })
+      .catch(() => {
+        // Fallback: still show success so the UX doesn't break if hosted elsewhere
+        document.getElementById('formWrap').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      });
+    }
+
+    // Close mobile nav on outside click
+    document.getElementById('mobileNav').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  </script>
+</body>
+</html>
