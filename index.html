@@ -1170,12 +1170,17 @@
   
     /* mobile: hide the wordmark, keep monogram only */
     @media (max-width: 768px) {
-      .nav-wordmark { display: none !important; }
+      .nav-wordmark {
+        display: inline !important;
+        font-size: 0.78rem !important;
+        letter-spacing: 0.05em !important;
+      }
+      .nav-logo { gap: 8px !important; }
       /* mobile founder — slightly taller crop, keep face up */
       .founder-photo { aspect-ratio: 5 / 6; max-height: 80vh; }
       .founder-photo img { object-position: center 15%; }
 
-      .nav-logo img { height: 38px !important; }
+      .nav-logo img { height: 36px !important; }
     }
 </style>
 </head>
