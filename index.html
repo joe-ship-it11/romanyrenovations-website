@@ -1666,9 +1666,9 @@
       <div id="formWrap">
         <h3 class="form-title">Get Your Free Quote</h3>
         <p class="form-subtitle">We'll get back to you within 24 hours.</p>
-        <form id="quoteForm" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitForm(event)">
-          <input type="hidden" name="form-name" value="quote" />
-          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <form id="quoteForm" name="quote" method="POST" action="https://formspree.io/f/mlgzoykr" onsubmit="submitForm(event)">
+          <input type="hidden" name="_subject" value="New quote request — Romany Renovations" />
+          <p style="display:none"><label>Don't fill this out: <input name="_gotcha" /></label></p>
           <div class="form-row">
             <div class="form-group">
               <label>First Name</label>
@@ -1783,22 +1783,24 @@
       nav.style.padding = window.scrollY > 50 ? '12px 5%' : '20px 5%';
     });
 
-    // Form submit — lets Netlify handle AJAX submission, then shows success state
+    // Form submit — posts to Formspree (action attr), then shows success state.
     function submitForm(e) {
       e.preventDefault();
       const form = e.target;
       const data = new FormData(form);
-      fetch('/', {
+      fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
+        headers: { 'Accept': 'application/json' },
+        body: data
       })
-      .then(() => {
+      .then(res => {
+        if (!res.ok) throw new Error('formspree non-ok');
         document.getElementById('formWrap').style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
+        form.reset();
       })
       .catch(() => {
-        // Fallback: still show success so the UX doesn't break if hosted elsewhere
+        // Fallback: still show success so the UX doesn't break.
         document.getElementById('formWrap').style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
       });
